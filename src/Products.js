@@ -12,7 +12,7 @@ const Products = ({data}) => {
                     <center>
                         <h5 className="card-title">{data.recipe.label}</h5>
                         <p className="card-text">Total Amount Of Calories : {Math.round(data.recipe.calories)}</p>
-                        <a href={data.recipe.url} className="btn btn-primary">Check</a>
+                        <a href={data.recipe.url} target='_blank' className="btn btn-primary">Check</a>
                         </center>
                     </div>
                     </div>
