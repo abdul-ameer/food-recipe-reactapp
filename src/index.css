@@ -9,7 +9,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #02aff0;
+  /* background-color: #02b7f8; */
 }
 
 code {
@@ -17,10 +17,5 @@ code {
     monospace;
 }
 
-.card {
-  width: 15re;
-  border-radius: 10px;
-  margin:50px;
-  align-items: baseline;
-}
+
 

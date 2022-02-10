@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import Products from './Products';
 import './App.css'
+import SocialProfile from './SocialProfile';
 
 const App = () => {
   const [search,setSearch] = useState('');
@@ -9,7 +10,7 @@ const App = () => {
   const YOUR_APP_KEY ="48ca6af1fae3492d6a23fab78cf1ddb7";
   const submitHandler = e =>{
     e.preventDefault();
-    fetch(`https://api.edamam.com/search?q=${search}&app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}&from=0&to=30&calories=591-722&health=alcohol-free`).then(
+    fetch(`https://api.edamam.com/search?q=${search}&app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}&from=0&to=30`).then(
       response => response.json()
     ).then(
       data => setData(data.hits)
@@ -17,19 +18,20 @@ const App = () => {
   }
   return (
     <div className="App">
-        <h1>Food Recipe  🍔</h1>
+        <h2>Food Recipe  🍔</h2>
+        <SocialProfile /> 
         <form className="app__searchForm" onSubmit={submitHandler}>
         <input
           className="app__input"
           type="text"
           placeholder="Enter Ingridient "
-          autoComplete="Off"
+          autoComplete="On"
           value={search}
           onChange={(e) => setSearch(e.target.value)}/>
           <input className="app__submit" type="submit" value="Search" />
-        </form>
+          </form>   
         {data.length>=1 ? <Products  data={data}/>:null}
-     
+        
     </div>
   )
 }
